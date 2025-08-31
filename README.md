@@ -44,7 +44,7 @@ Follow the below sections to train and run the inference of the models.
 
 ## [Note]
 
-Inference of the model can be executed without training the model. The pre-trained weights for both models are provided in Google Drive.
+Inference of the model can be executed without training the model. The pre-trained weights for the  model is provided in Google Drive.
 
 ## Data Augumentation
 Augment the training data
@@ -59,7 +59,7 @@ python data_augmentation.py
 Run the following in the project directory to train the hybrid model
 
 ```bash
-python attn_train.py
+python attn_regression.py
 ```
 
 
