@@ -30,3 +30,64 @@ Install the requirements using the package manager [pip](https://pip.pypa.io/en/
 ```bash
 pip install -r requirements.txt
 ```
+## Downloading Files from Google Drive
+
+To download the necessary files from Google Drive, follow these steps:
+
+1. Copy the file's sharing link from Google Drive.
+   [Dataset](https://drive.google.com/drive/folders/1n9G8FeW_8PeC4JbNj_1vFRuOEVretTGw?usp=drive_link)
+2. Download the folder, unzip the files inside, and copy the files inside the Dataset-for-facial-expression-of-personality folder.
+
+## Usage
+
+Follow the below sections to train and run the inference of the models. 
+
+## [Note]
+
+Inference of the model can be executed without training the model. The pre-trained weights for both models are provided in Google Drive.
+
+## Data Augumentation
+Augment the training data
+```bash
+python data_augmentation.py
+```
+
+## Hybrid Model
+
+## Training
+
+Run the following in the project directory to train the hybrid model
+
+```bash
+python attn_train.py
+```
+
+
+## Retraining
+
+Retraining the hybrid model with the data obtained from the user study.
+
+```bash
+python attn_retrain.py
+```
+## Testing
+
+Run the following in the project directory to test the hybrid model performance.
+
+```bash
+python attn_test.py
+```
+
+## Deployment
+
+Run the following in the project directory to generate the personality traits data using a hybrid model.
+
+```bash
+python attn_deploy.py
+```
+
+## Custom action units
+
+Action Units can be extracted from custom videos using the OpenFace library, which employs the FACS principle. Please use the following [Documention](https://github.com/TadasBaltrusaitis/OpenFace/wiki) to obtain the Action Units used to input our model.
+
+
