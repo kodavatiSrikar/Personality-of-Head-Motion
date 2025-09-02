@@ -1,7 +1,7 @@
 # A Personality-Labeled Semantic Dataset from Facial Expressions, Gaze, and Head Movement Cues
 
 # Overview
-The software takes as input pre-extracted facial Action Units (AUs), eye gaze directions, and head rotation parameters and trains a deep neural network with attention and convolutional layers to predict Five-Factor personality trait labels. It supports retraining with updated annotations and includes correlation analysis of feature contributions
+The software takes as input pre-extracted facial Action Units (AUs), eye gaze directions, and head rotation parameters and trains a deep neural network with attention and convolutional layers to predict Five-Factor personality trait labels. It supports retraining with updated annotations and includes correlation analysis of feature contributions.
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing. The dataset can be generated using two models provided in the project.
@@ -45,7 +45,7 @@ Follow the below sections to train and run the inference of the models.
 
 Inference of the model can be executed without training the model. The pre-trained weights for the  model is provided in Google Drive.
 
-## Data Augumentation
+## Data Augmentation
 Augment the training data
 ```bash
 python data_augmentation.py
@@ -87,14 +87,14 @@ python attn_deploy.py
 
 ## Correlation analysis
 
-Run the following in the project directory to generate spearman correlations between personality factors and mean AU intensities.
+Run the following in the project directory to generate Spearman correlations between personality factors and mean AU intensities, this replicates the Figure-6 in the paper.
 
 ```bash
 python au_analysis.py
 ```
 
-## Custom action units
+## Action Unit, Head, and Gaze Parameter Extraction
 
-Action Units can be extracted from custom videos using the OpenFace library, which employs the FACS principle. Please use the following [Documention](https://github.com/TadasBaltrusaitis/OpenFace/wiki) to obtain the Action Units used to input our model.
+Action Unit, Head, and Gaze can be extracted from custom videos using the OpenFace library, which employs the FACS principle. Please use the following [Documention](https://github.com/TadasBaltrusaitis/OpenFace/wiki) to obtain the Action Unit, Head, and Gaze used to input our model.
 
 
