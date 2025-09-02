@@ -86,7 +86,7 @@ python attn_test.py
 
 ## Deployment
 
-Run the following in the project directory to generate the personality traits data using a hybrid model. The deployment uses trains model weights(3iternorm_180.pt) to run the inference.
+Run the following in the project directory to generate the personality traits data using a hybrid model. The deployment uses retrained model weights(3iternorm_180.pt) to run the inference.
 
 ```bash
 python attn_deploy.py
