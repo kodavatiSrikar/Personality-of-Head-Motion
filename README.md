@@ -1,8 +1,7 @@
 # A Personality-Labeled Semantic Dataset from Facial Expressions, Gaze, and Head Movement Cues
 
 # Overview
-This work presents a model that identifies a person's personality traits given Head Motion, and a large-scale standardized dataset of Head Motion in terms of Action Units, Head Rotation and Eye Gaze. The project employs an iterative training approach to train a Hybrid Attention model that predict personality traits based on the Head Motions.
-
+The software takes as input pre-extracted facial Action Units (AUs), eye gaze directions, and head rotation parameters and trains a deep neural network with attention and convolutional layers to predict Five-Factor personality trait labels. It supports retraining with updated annotations and includes correlation analysis of feature contributions
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing. The dataset can be generated using two models provided in the project.
