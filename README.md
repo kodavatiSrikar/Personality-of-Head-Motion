@@ -86,6 +86,14 @@ Run the following in the project directory to generate the personality traits da
 python attn_deploy.py
 ```
 
+## Correlation analysis
+
+Run the following in the project directory to generate spearman correlations between personality factors and mean AU intensities.
+
+```bash
+python au_analysis.py
+```
+
 ## Custom action units
 
 Action Units can be extracted from custom videos using the OpenFace library, which employs the FACS principle. Please use the following [Documention](https://github.com/TadasBaltrusaitis/OpenFace/wiki) to obtain the Action Units used to input our model.
