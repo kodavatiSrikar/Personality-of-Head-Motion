@@ -248,7 +248,7 @@ def custom_heatmap(data, annotations, filename):
     plt.show()
 
 # Load your data
-data = pd.read_csv('attn_pers.csv')
+data = pd.read_csv('output_pers.csv')
 
 # Define personality trait columns
 personality_traits = ['extroversion', 'neuroticism', 'agreeableness', 'conscientiousness', 'openness']
