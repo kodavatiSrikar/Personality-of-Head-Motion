@@ -48,7 +48,9 @@ Follow the below sections to train and run the inference of the models.
 Inference of the model can be executed without training the model. The pre-trained weights for the  model is provided in Google Drive.
 
 ## Data Augmentation
+
 Augment the training data(train_data.csv)
+
 ```bash
 python data_augmentation.py
 ```
@@ -94,7 +96,9 @@ python attn_deploy.py
 
 ## Correlation analysis
 
+
 Replicate the analysis (Figure 6 in the paper) by computing Spearman correlations between mean AU intensities and predicted personality traits using the model's output data(output_pers.csv).
+
 
 ```bash
 python au_analysis.py
