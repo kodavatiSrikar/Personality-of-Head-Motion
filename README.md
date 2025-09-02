@@ -1,7 +1,8 @@
 # A Personality-Labeled Semantic Dataset from Facial Expressions, Gaze, and Head Movement Cues
 
 # Overview
-This work presents a model that identifies a person's personality traits given Head Motion, and a large-scale standardized dataset of Head Motion in terms of Action Units, Head Rotation and Eye Gaze. The project employs an iterative training approach to train a Hybrid Attention model that predict personality traits based on the Head Motions.
+The software takes as input pre-extracted facial Action Units (AUs), eye gaze directions, and head rotation parameters and trains a deep neural network with attention and convolutional layers to predict Five-Factor personality trait labels. It supports retraining with updated annotations and includes correlation analysis of feature contributions.
+
 
 ## Getting Started
 
@@ -36,7 +37,7 @@ To download the necessary files from Google Drive, follow these steps:
 
 1. Copy the file's sharing link from Google Drive.
    [Dataset](https://drive.google.com/drive/folders/15HHCb6eOnz4kK3AmFgACZvbNZY89oPSC?usp=sharing)
-2. Download the folder, unzip the files inside, and copy the files inside the Dataset-for-facial-expression-of-personality folder.
+2. Download the folder, unzip the files inside, and copy the files inside the Personality-of-Head-Motion folder.
 
 ## Usage
 
@@ -46,8 +47,8 @@ Follow the below sections to train and run the inference of the models.
 
 Inference of the model can be executed without training the model. The pre-trained weights for the  model is provided in Google Drive.
 
-## Data Augumentation
-Augment the training data
+## Data Augmentation
+Augment the training data(train_data.csv)
 ```bash
 python data_augmentation.py
 ```
@@ -65,7 +66,12 @@ python attn_regression.py
 
 ## Retraining
 
-Retraining the hybrid model with the data obtained from the user study.
+## Data Augmentation
+Augment the retraining data(retrain_data.csv)
+```bash
+python data_augmentation.py
+```
+Retraining the hybrid model with the data obtained from the user study. This step loads the pretrained weights(au_180.pt) as a base model.
 
 ```bash
 python attn_retrain.py
@@ -80,14 +86,22 @@ python attn_test.py
 
 ## Deployment
 
-Run the following in the project directory to generate the personality traits data using a hybrid model.
+Run the following in the project directory to generate the personality traits data using a hybrid model. The deployment uses retrained model weights(3iternorm_180.pt) to run the inference.
 
 ```bash
 python attn_deploy.py
 ```
 
-## Custom action units
+## Correlation analysis
 
-Action Units can be extracted from custom videos using the OpenFace library, which employs the FACS principle. Please use the following [Documention](https://github.com/TadasBaltrusaitis/OpenFace/wiki) to obtain the Action Units used to input our model.
+Replicate the analysis (Figure 6 in the paper) by computing Spearman correlations between mean AU intensities and predicted personality traits using the model's output data(output_pers.csv).
+
+```bash
+python au_analysis.py
+```
+
+## Action Unit, Head, and Gaze Parameter Extraction
+
+Action Unit, Head, and Gaze can be extracted from custom videos using the OpenFace library, which employs the FACS principle. Please use the following [Documention](https://github.com/TadasBaltrusaitis/OpenFace/wiki) to obtain the Action Unit, Head, and Gaze used to input our model.
 
 
