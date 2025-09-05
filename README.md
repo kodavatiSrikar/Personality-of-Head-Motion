@@ -6,7 +6,17 @@ The software takes as input pre-extracted facial Action Units (AUs), eye gaze di
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing. The dataset can be generated using two models provided in the project.
+These instructions will get you a copy of the project up and running on your local machine for development and testing.
+
+## Technical Requirements and Reproducibility
+
+### Hardware
+- **GPU Tested:** NVIDIA GeForce RTX 4080 (16 GB VRAM required)
+- **Training Time:** ~32 hours (including retraining) on a single RTX 4080
+- **Inference Time:** ~2 hours for the full test dataset
+
+### Software
+- **Operating System:** Linux (tested on Ubuntu 22.04 LTS)
 
 ### Prerequisites
 
@@ -38,6 +48,8 @@ To download the necessary files from Google Drive, follow these steps:
 1. Copy the file's sharing link from Google Drive.
    [Dataset](https://drive.google.com/drive/folders/15HHCb6eOnz4kK3AmFgACZvbNZY89oPSC?usp=sharing)
 2. Download the folder, unzip the files inside, and copy the files inside the Personality-of-Head-Motion folder.
+3. To run inference without training from scratch, using the pretrained weights(3iternorm_180.pt) provided in the above folder run the inference step.
+4. To reproduce the correlation figure without running inference, using the generated dataset(output_pers.csv) provided in the folder run coorrelation analysis step.
 
 ## Usage
 
@@ -86,9 +98,9 @@ Run the following in the project directory to test the hybrid model performance.
 python attn_test.py
 ```
 
-## Deployment
+## Inference
 
-Run the following in the project directory to generate the personality traits data using a hybrid model. The deployment uses retrained model weights(3iternorm_180.pt) to run the inference.
+Run the following in the project directory to run inference and generate the personality traits dataset. The deployment step uses retrained model weights(3iternorm_180.pt) to run the inference.
 
 ```bash
 python attn_deploy.py
