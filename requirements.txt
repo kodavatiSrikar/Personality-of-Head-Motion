@@ -12,7 +12,6 @@ cryptography==3.4.8
 dbus-python==1.2.18
 decorator==4.4.2
 distro==1.7.0
-fail2ban==0.11.2
 filelock==3.16.1
 fsspec==2024.10.0
 gast==0.5.2
